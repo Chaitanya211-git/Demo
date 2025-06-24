@@ -1,0 +1,132 @@
+﻿TestCaseTitle,TestDescription,TestObjective,TestSteps,Expected_Result,UserStoryTitle,TestType
+Opportunity | Treaty | Create New Treaty Opportunity,Opportunity | Treaty | Create New Treaty Opportunity,Opportunity | Treaty | Create New Treaty Opportunity,"Pre-Condition: If using this Test Case for Production Testing please use Cedent Code S2I or S3I Only for QA Env you can use any 
+1. Launch Application:  Pipeline - Grids Broking
+2. Select the Revenue Team 
+3. Click New Treaty Opportunity
+4. Click on Detailed View link.
+5. Select the Client Code.      
+6. Click Search
+7. Select the client Code and verify the following.
+Display as Name (Code)- Verified  the Code field is required                                                               
+Default to the selected Client from Team Manage Team Pipeline, if selected, but can be changed. Search mechanism for clients - filter by client code or name 
+List of existing active clients & prospects
+8. Select client Contract. Verify the following- 
+* client Contract is required
+* Single dropdown of active contacts for Client from CMS with contact Type = External, Sales Treaty OR External, Sales Fac
+* Display LastName, FirstName
+9. Enter the Opportunity Name. * Verify Opportunity Name is required 
+10. Select GRU - Verify GRU is required 
+11. Validate  - Allow for Multiple Competitors and their % Split
+12. Add % Split value as 50 
+Add one more competitor and enter % split value as 40
+Click on Submit and  Verify warning message is getting displayed
+13. Primary Contact Email field is NOT Mandatory 
+14. Select Revenue Team. Verify the following- Revenue Team is required 
+- Default to the selected Revenue Team Manage Team Pipeline, if selected
+- Only list those for the selected GRU
+- When/if the GRU changes, the employee list will refresh
+15. Select the Team Members. Verify the following- List of employees shows in based on GRU selected and those with an activity code = 'B' (broker); when/if the GRU changes, the employee list will refresh
+-Relationship Manager (required) , -Account Manager (required), -Sales Team Member (ServicingBroker1) (required)
+-Other Team Members, -unlimited number of valid employees can be added here, others are single-select,	-need ability to both add & remove names from the list)
+16. Select Product Type(required) ,  Line of Business(required) 
+17. Select Business Segment.verify the following - Business Segment is required - options based on the selected Line of Business, when it changes, the list will refresh 
+18. Verify if 'None' is selected for Specialty Practice, no other specialties are also selected
+19. Select *Specialty Practices (multi-select) (required) , *Geography/Territory
+20. Verify if 'None' is selected for Specialty Practice, no other specialties are also selected
+21. a) If there is an error on Submit, keep the user on the Summary page so they can retry and/or fix the problem
+b) Defined 'time out' long enough on this page to accommodate this - 12h
+22. Enter- 
+*Limit
+	-instructional text: enter an estimate in contract currency
+	-Required for XOL Product Types, Only  
+	-If user has selected their location is settings, localize the format to their location
+*Retention
+	-instructional text: enter an estimate in contract currency
+	-Required for XOL Product Types,  
+	-If user has selected their location is settings, localize the format to their location
+*100% Estimated Reinsurance Premium
+	- Required for XOL Product Types
+	- If user has selected their location in settings, localize the format to that location
+*Estimated Subject Premium
+	- If user has selected their location in settings, localize the format to that location
+*Estimated Pro Rata Cession %
+23. Enter- 
+* Estimated Directs % - Percent cannot exceed 100 % individually*
+* Estimated In House % - Percent cannot exceed 100 % individually*
+* Estimated Other Broker % - Percent cannot exceed 100 % individually*                                                                     
+* The sum for Estimated Directs, In House and Other Brokers cannot exceed 100%.
+24. Enter *Opportunity Description , *Current Condition 
+25. Select New/Renewal  (required) 
+26. a ""?"" icon next to RFP Involved : 
+Tool Tip Text:  Request for Proposal (RFP) Involved = ""Y"" when the client has a formal 'Request for Proposal' out for a program and/or an organized deal team was/has been assembled to convert the opportunity to new business.
+27. Tick RFP Involved
+28. a ""?"" icon next to the Annual/Manual phasing options 
+Tool Tip Text:  Annual is used for the majority of opportunities, as current revenue recognition rules recognize revenue at the effective date of the contract, even if it is billed quarterly or monthly. Manual should only be used for exceptions.
+29. Select   
+Effective Date (required)- If user has selected their location is settings, localize the format to their location
+Expiry Date - If user has selected their location is settings, localize the format to their location
+Revenue Recognition (required)- Annual (default), Manually enter 
+Currency - reference data needed to load dropdowns
+Opportunity Probability % - reference data needed to load dropdowns
+Deleted/Downgrade Reason - reference data needed to load dropdowns
+30. Enter
+Annualized Pipeline (required)
+*If user has selected their location is settings, localize the format to their location
+*If Revenue Recognition = Annual, the Annualized Amount should populate Revenue Table once entered (tab out)
+*The value should appear in both the month of its effective date/year and that same month the next year (effective date month/year +1) * Deleted/Downgrade Comment
+31. For Table view for Manual entries, verify the following
+*Data should to be captured & viewed by month/year
+*12 months years displayed - could straddle current year & next year if effective date is mid-year
+*FOUR years of data saved - effective date year + 3yrs 
+*No currency conversion at this time or showing weighted pipeline values 
+32. Click Save
+33. Verify Revenue Team value not change
+34. Return to My Opps with the same team selected.","1. Verified the application launched successfully
+2. Verified the Revenue Team selected
+3. Create Treaty Opportunity page should get open
+4. All Fields should get displayed.
+5. Verified the Client code selected 
+6. Verified it opens the list of clients  
+7. client code selected
+8. Client Contract selected
+9.  Opportunity name entered
+10. GRU selected
+11. a. The Incumbent value should sync with the competitor that has the highest % value.
+b. If there are multiple with the same % (highest value), choose the 1st one. Ability to identify Multiple Competitor's for the same opportunity.
+	i. Capture % Split for each competitor added.
+		- %'s cannot be < 0 or > 100
+		- Total % must= 100%
+		- Field is REQUIRED
+	ii. Capture Primary Contact for each Competitor.
+		- Contact data will not be mastered to CMS system, rather capture a single text field labeled Primary Contact Email
+		- Field is NOT required.
+Since contacts are text only in the new application, the contact value does not need to be synced.(currently, no value is set/synced)
+Validate as per User Story 808162: Pipeline - Allow for Multiple Competitors and their % Split
+12. User able to enter the value, User should get warning message as '% Split values must equal 100.'
+Enter % Split value as'100' (when adding all competitors Split values) Then only user is able to remove validation error.
+13. If user enters value, it should show after save, else it should be able to proceed further without any value.
+14. Revenue team selected
+15. Team Members selected
+16. Product type, Line of Business selected
+17. Business Segment selected
+18. Specialty Practices and Geography/Territory selected
+19. no other specialties are selected if user select 'None'
+Validate - *If 'None' is selected for Specialty Practice, no other specialties are also selected
+*Validation Error when/if others are selected when None is selected
+20. verified the validation error
+21. Validate a) If there is an error on Submit, keep the user on the Summary page so they can retry and/or fix the problem b) Defined 'time out' long enough on this page to accommodate this - 12h
+22. Value entered for Limit, Retention, 100 % Estimated Reinsurance Premium, Estimated subject Premium, Estimated Pro Rata Cession %
+23. Value entered  for Estimated Directs %, Estimated In House %, Estimated Other Broker %
+24. Value entered for Opportunity Description, Current Condition
+25. New/Renewal Selected
+26. Validate Icon and tooltip text -  
+Request for Proposal (RFP) Involved = ""Y"" when the client has a formal 'Request for Proposal' out for a program and/or an organized deal team was/has been assembled to convert the opportunity to new business.
+27. RFP Involved ticked
+28. Validate? icon and Tooltip text: 
+Tool Tip Text:  Annual is used for the majority of opportunities, as current revenue recognition rules recognize revenue at the effective date of the contract, even if it is billed quarterly or monthly. Manual should only be used for exceptions.
+29. Value selected for Effective Date, Expiry Date, Revenue Recognition, Currency, Opportunity Probability %, Deleted/Downgrade Reason
+30. Value Entered for Annualized Pipeline
+31.  Verified Table view
+32. Verified all the data saved successfully
+33. Verified Revenue Team value should not be changed
+34. Validate that Return to My Opps with the same team selected.",General - Drag/Drop General Internal Communications,Regression Testing
